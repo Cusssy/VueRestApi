@@ -18,8 +18,7 @@ const login = async (event) => {
       user: user.value,
       password: password.value
     })
-    
-    const token = response.data.token
+    const token = response.data
     localStorage.setItem('token', token)
     localStorage.setItem('user', user.value)
 
