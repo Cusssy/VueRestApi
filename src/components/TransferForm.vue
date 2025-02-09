@@ -6,6 +6,7 @@ import axios from 'axios'
 
 const user = ref('')
 const amount = ref(0)
+const status = ref('')
 
 async function transfer() {
     const token = localStorage.getItem('token')
@@ -20,8 +21,8 @@ async function transfer() {
             {}, // cuerpo vacío o los datos que necesites enviar
             config
         );
-        console.log("response"+response.data)
-        
+        console.log("response: "+response.data)
+        status.value = response.data
         return response.data
     }
     catch (error) {
@@ -41,6 +42,7 @@ async function transfer() {
         <p>Monto:</p>
         <input type="number" v-model="amount" placeholder="Monto"/>
         <button type="button" @click="transfer">Transferir</button>
+        <p>{{ status }}</p>
     </form>
   </div>
 </template>
