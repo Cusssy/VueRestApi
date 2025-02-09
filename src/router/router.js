@@ -2,10 +2,12 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import login from '../views/login.vue';
 import panel from '../views/panel.vue';
+import register from '../views/register.vue'
 
 const routes = [
   { path: '/', component: Home },
   { path: '/login', component: login },
+  { path: '/register', component: register},
   { path: '/panel', component: panel, meta: { requiresAuth: true } }
 ];
 

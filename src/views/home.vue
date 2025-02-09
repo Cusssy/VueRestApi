@@ -8,6 +8,8 @@
     <p>Este es un proyecto de frontend con Vue y RestApi</p>
     <p>Logueate!</p>
     <router-link to="/login">Login</router-link>
+    <p>or</p>
+    <router-link to="/register">Register</router-link>
   </div>
 </template>
 
