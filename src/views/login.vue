@@ -36,6 +36,7 @@ const login = async (event) => {
         <input type="text" v-model="user" placeholder="Usuario"/>
         <input type="password" v-model="password" placeholder="Contraseña">
         <button @click="saveText">Ingresar</button>
+        <p>{{ errorMessage }}</p>
     </form>
   </div>
 </template>

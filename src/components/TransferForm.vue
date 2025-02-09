@@ -1,12 +1,14 @@
 <script setup>
 import { ref } from 'vue';
 import axios from 'axios'
-//mport getBalance from '../composables/getBalance'
+import { getBalance } from '../composables/getBalance'
 
 
+const emit = defineEmits(['transferComplete'])
 const user = ref('')
 const amount = ref(0)
 const status = ref('')
+
 
 async function transfer() {
     const token = localStorage.getItem('token')
@@ -23,10 +25,12 @@ async function transfer() {
         );
         console.log("response: "+response.data)
         status.value = response.data
+        emit('transferComplete')
         return response.data
     }
     catch (error) {
         console.log(error)
+        status.value = 'Error en la transferencia'
     }    
 }
 

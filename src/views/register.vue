@@ -47,5 +47,10 @@ const register = async (event) => {
 
 
 <style>
-
+#register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
 </style>

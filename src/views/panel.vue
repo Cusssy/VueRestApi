@@ -10,8 +10,12 @@ function getUser() {
     return user
 }
 
-onMounted(async () => {
+async function updateBalance() {
     balance.value = await getBalance()
+}
+
+onMounted(async () => {
+    updateBalance()
 });
 
 console.log(getUser())
@@ -23,7 +27,7 @@ console.log(getUser())
         <p>Este es tu balance bro: {{ balance }}</p> 
     </div>
     <div>
-        <TransferForm />
+        <TransferForm @transfer-complete="updateBalance" />
     </div>
 </template>
 
