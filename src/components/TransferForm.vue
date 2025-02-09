@@ -35,12 +35,12 @@ async function transfer() {
 <template>
   <div>
     <h1 class="titulo">Transferencia</h1>
-    <form id="transfer" @submit="transfer">
+    <form id="transfer">
         <p>Transferir a:</p>
         <input type="text" v-model="user" placeholder="Usuario"/>
         <p>Monto:</p>
         <input type="number" v-model="amount" placeholder="Monto"/>
-        <button type="sumbit">Transferir</button>
+        <button type="button" @click="transfer">Transferir</button>
     </form>
   </div>
 </template>
