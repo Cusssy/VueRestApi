@@ -10,7 +10,7 @@ const user = ref('');
 const password = ref('');
 const errorMessage = ref('')
 
-const url = 'http://localhost:3000/createAccount';
+const url = 'https://9vfnpg8x-3000.uks1.devtunnels.ms/createAccount';
 
 const register = async (event) => {
   event.preventDefault()
@@ -22,7 +22,7 @@ const register = async (event) => {
     })
     const token = response.data
     localStorage.setItem('token', token)
-    localStorage.setItem('user', name.value)
+    localStorage.setItem('user', user.value)
 
     router.push('/panel')
   } catch (error) {

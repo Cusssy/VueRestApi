@@ -2,8 +2,11 @@
 import { ref, onMounted } from 'vue'
 import { getBalance } from '../composables/getBalance'
 import TransferForm from '../components/TransferForm.vue'
+import { getName } from '../composables/getName'
 
-const balance = ref('')
+
+const balance = ref('Loading...')
+const name = ref(localStorage.getItem("name"))
 
 function getUser() {
     const user = localStorage.getItem('user') 
@@ -16,14 +19,13 @@ async function updateBalance() {
 
 onMounted(async () => {
     updateBalance()
+    name.value = await getName()
 });
-
-console.log(getUser())
 </script>
 
 <template>
     <div class="panel">
-        <h1>Bienvenido {{ getUser() }}!</h1>
+        <h1>Bienvenido {{ name }}!</h1>
         <p>Este es tu balance bro: {{ balance }}</p> 
     </div>
     <div>

@@ -19,7 +19,7 @@ async function transfer() {
 
     try {
         const response = await axios.post(
-            `http://localhost:3000/transfer/${user.value}/${amount.value}`,
+            `https://9vfnpg8x-3000.uks1.devtunnels.ms/transfer/${user.value}/${amount.value}`,
             {}, // cuerpo vacío o los datos que necesites enviar
             config
         );
